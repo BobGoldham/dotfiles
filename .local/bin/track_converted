@@ -1,0 +1,6 @@
+#!/bin/sh
+dmesg --follow | while read -r line; do
+    if [[ $line == *"ideapad_laptop: Unknown event: 10"* ]]; then
+        echo "converted" >> ~/convert.txt
+    fi
+done

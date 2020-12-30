@@ -1,0 +1,12 @@
+hash -d cac=/home/user/.cache 
+hash -d cf=/home/user/.config 
+hash -d D=/home/user/Downloads 
+hash -d d=/home/user/Documents 
+hash -d dt=/home/user/.local/share 
+hash -d h=/home/user 
+hash -d m=/home/user/Music 
+hash -d mn=/mnt 
+hash -d pp=/home/user/Pictures 
+hash -d sc=/home/user/.local/bin 
+hash -d src=/home/user/.local/src 
+hash -d vv=/home/user/Videos 
