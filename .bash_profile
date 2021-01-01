@@ -10,10 +10,6 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export HISTFILESIZE=-1
 
 
-# Get terminal message
-. ~/.bash_motd
-
-
 # Set up dev environments
 webp() {
     mkdir assets assets/css assets/js assets/img

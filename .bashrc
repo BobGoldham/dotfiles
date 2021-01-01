@@ -92,5 +92,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+# Get terminal message
+. ~/.bash_motd
+
+
 # Config git-repo
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
