@@ -99,3 +99,10 @@ fi
 
 # Config git-repo
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+
+# Auto mount NAS and EncFS
+if [[ $(iw dev | grep ssid | awk '{print $2}') == "MSAP" ]]; then
+    (mountpoint -q /mnt/nas) || (mount /mnt/nas >/dev/null 2>&1)
+    (mountpoint -q /mnt/nas) && ( (mountpoint -q /home/user/Encfs) || (mount ~/Encfs) )
+fi
