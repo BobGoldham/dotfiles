@@ -17,7 +17,8 @@ gaps top 62
 floating_modifier $mod
 
 # Start a URxvt terminal emulator instance
-bindsym $mod+Return exec uterm
+#bindsym $mod+Return exec uterm
+bindsym $mod+Return exec urxvt
 
 # Kill focused window
 bindsym $mod+q kill
@@ -170,7 +171,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 exec --no-startup-id brave
 exec --no-startup-id code
-exec --no-startup-id discord
+exec --no-startup-id discord-canary
 exec --no-startup-id sleep 1 && ~/.local/bin/uterm
 exec --no-startup-id thunar
 exec --no-startup-id /home/user/build/Write/Write
