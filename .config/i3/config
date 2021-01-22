@@ -146,8 +146,9 @@ for_window [class="Pavucontrol"] floating enable
 assign [class="Brave-browser"] workspace 2
 assign [class="Code"] workspace 3
 assign [class="discord"] workspace 4
-assign [class="Thunar"] workspace 10
 assign [class="Write"] workspace 9
+assign [title="ranger"] workspace 10
+assign [class="Thunar"] workspace 10
 
 # Make sure fonts are loaded right
 exec_always xset +fp /home/kai/.fonts/
@@ -173,5 +174,5 @@ exec --no-startup-id brave
 exec --no-startup-id code
 exec --no-startup-id discord-canary
 exec --no-startup-id sleep 1 && ~/.local/bin/uterm
-exec --no-startup-id thunar
 exec --no-startup-id /home/user/build/Write/Write
+exec --no-startup-id sleep 5 && urxvt -e ranger

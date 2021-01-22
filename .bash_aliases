@@ -1,3 +1,7 @@
+# Troll neofetch
+
+alias neofetch="neofetch --ascii_distro gentoo -L"
+
 # Rebind programs to easier/common names
 
 alias vi="nvim"
