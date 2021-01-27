@@ -2,8 +2,12 @@
 
 alias neofetch="neofetch --ascii_distro gentoo -L"
 
+# Always utilize 8 cores on make
+alias make="make -j8"
+
 # Rebind programs to easier/common names
 
+alias yay="paru"
 alias vi="nvim"
 alias vim="nvim"
 alias ls="lsd"

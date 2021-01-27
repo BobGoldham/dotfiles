@@ -18,7 +18,7 @@ floating_modifier $mod
 
 # Start a URxvt terminal emulator instance
 #bindsym $mod+Return exec uterm
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec uterm
 
 # Kill focused window
 bindsym $mod+q kill
