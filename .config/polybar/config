@@ -10,69 +10,8 @@ purple = #A117F2
 orange = #FFA500
 
 
-[bar/touch]
-bottom = true
-width = 60%:-48
-
-offset-x = 20%:+48
-
-override-redirect = true
-
-height = 40
-radius = 0.0
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-module-margin-left = 2
-module-margin-right = 1
-
-font-0 = Hack Nerd Font Mono:pixelsize=23:antialias=true;2.5
-font-1 = Hack Nerd Font Mono:style=Regular:pixelsize=23:antialias=true;3
-
-modules-center = flip_full flip keyboard fullscreen
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-
-[module/fullscreen]
-type = custom/text
-format-spacing = 1
-content = ""
-content-foreground = ${colors.primary}
-click-left = i3-msg fullscreen
-
-
-[module/flip_full]
-type = custom/text
-format-spacing = 1
-content = "北"
-content-foreground = ${colors.alert}
-click-left = bash ~/scripts/misc/rotate_desktop.sh inverted
-
-
-[module/flip]
-type = custom/text
-format-spacing = 1
-content = "ﮨ"
-content-foreground = ${colors.orange}
-click-left = bash ~/scripts/misc/flip_desktop.sh
-
-
-[module/keyboard]
-type = custom/text
-format-spacing = 1
-;content = ""
-content = ""
-content-foreground = ${colors.purple}
-click-left = bash ~/scripts/misc/onboard.sh
-
-
-
-
-
 [bar/main]
+monitor = ${env:MONITOR:}
 width = 100%:-48
 offset-x = 24
 offset-y = 24
@@ -96,7 +35,7 @@ font-1 = Hack Nerd Font:style=Regular:pixelsize=17:antialias=true;3
 
 modules-left = i3
 modules-center = xwindow
-modules-right = wlan battery backlight date powermenu
+modules-right = wlan date powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -133,8 +72,8 @@ ws-icon-1 = "1;%{T2}%{T-}  "
 ws-icon-2 = "2;  "
 ws-icon-3 = "3;%{T2}%{T-}  "
 ws-icon-4 = "4;ﭮ  "
-ws-icon-5 = "5;5  "
-ws-icon-6 = "6;6  "
+ws-icon-5 = "5;阮  "
+ws-icon-6 = "6;  "
 ws-icon-7 = "7;7  "
 ws-icon-8 = "8;8  "
 ws-icon-9 = "9;  "
@@ -159,19 +98,9 @@ label-urgent-foreground = ${colors.alert}
 label-urgent-padding = ${self.label-focused-padding}
 
 
-[module/backlight]
-type = custom/script
-exec = echo "  $(light -G | awk '{print ($0-int($0)<0.499)?int($0):int($0)+1}')%"
-format = <label>
-label-foreground = ${colors.tertiary}
-click-left = bash ~/scripts/misc/backlight.sh dec 5
-click-right = bash ~/scripts/misc/backlight.sh inc 5
-interval = 5.0
-
-
 [module/wlan]
 type = internal/network
-interface = wlp0s20f3
+interface = wlo1
 interval = 3.0
 
 format-connected = <label-connected>
@@ -205,34 +134,6 @@ format-prefix-foreground = ${colors.foreground}
 format-underline = #0a6cf5
 label = %date%%time%
 
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 100
-
-format-charging = <ramp-capacity>
-format-discharging = <ramp-capacity>
-
-label-full = ""
-label-full-foreground = ${colors.fourth}
-
-ramp-capacity-0 = ""
-ramp-capacity-1 = ""
-ramp-capacity-2 = ""
-ramp-capacity-3 = ""
-ramp-capacity-4 = ""
-ramp-capacity-5 = ""
-ramp-capacity-6 = ""
-ramp-capacity-7 = ""
-ramp-capacity-8 = ""
-ramp-capacity-9 = ""
-ramp-capacity-foreground = ${colors.fourth}
-
-label-discharging =
-label-discharging-foreground = ${colors.fourth}
-label-charging-foreground = ${colors.fourth}
 
 [module/powermenu]
 type = custom/text

@@ -15,3 +15,4 @@ else
 fi
 
 ssh-agent i3
+#ssh-agent leftwm

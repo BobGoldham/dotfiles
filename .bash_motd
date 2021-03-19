@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo "Nothing here right now until I have a good idea, submit a PR if you have something interesting to add!" > /dev/null
-paleofetch --ascii_distro ArcoLinux

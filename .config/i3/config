@@ -31,8 +31,8 @@ bindsym $mod+Tab exec $rofi tabmenu
 bindsym $mod+Shift+e exec $rofi powermenu
 
 # Set up screenshots and partial screenshots
-bindsym --release Print exec maim ~/images/scrots/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym --release Shift+Print exec maim -s ~/images/scrots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym --release Print exec maim ~/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym --release Shift+Print exec maim -s ~/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 
 # Bind audio keys to pactl volume control
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -76,6 +76,20 @@ bindsym $mod+Control+space focus mode_toggle
 # Bind keys to switch to next workspace
 bindsym $mod+bracketright workspace next
 bindsym $mod+bracketleft workspace prev
+
+# Assign workspaces to screens
+set $left DP-4
+set $right DP-2
+workspace 1 output $right
+workspace 2 output $left
+workspace 3 output $right
+workspace 4 output $left
+workspace 5 output $right
+workspace 6 output $right
+workspace 7 output $right
+workspace 8 output $right
+workspace 9 output $left
+workspace 10 output $right
 
 # Switch to workspace
 bindsym $mod+1 workspace 1
@@ -138,26 +152,31 @@ bindsym $mod+Shift+o exec $music info
 bindsym $mod+Shift+minus exec $music vol -10
 bindsym $mod+Shift+equal exec $music vol 10
 
+# Custom "learning" keybind to open a random man-page
+bindsym $mod+l exec find /usr/share/man/man* -type f | shuf | awk -F '/' '/1/ {print $6}' | sed 's/\.gz//g' | head -n 1 | xargs uterm -e man {} +
+
 # Always float certain windows
 for_window [class="mpv"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Wine"] floating disable
 
 # Assign applications to workspaces
-assign [class="Brave-browser"] workspace 2
-assign [class="Code"] workspace 3
+assign [class="firefox"] workspace 2
+assign [class="code-oss"] workspace 3
 assign [class="discord"] workspace 4
-assign [class="Write"] workspace 9
-assign [title="ranger"] workspace 10
-assign [class="Thunar"] workspace 10
+assign [class="Lutris"] workspace 6
+assign [class="battle.net.exe"] workspace 6
+assign [class="evelauncher.exe"] workspace 6
+assign [class="Wine"] workspace 6
+assign [class="brawlhalla.exe"] workspace 6
+assign [class="explorer.exe"] workspace 9
+assign [class="Microsoft Teams - Preview"] workspace 9
 
 # Make sure fonts are loaded right
-exec_always xset +fp /home/kai/.fonts/
+exec_always xset +fp /home/user/.fonts/
 exec_always xset fp rehash
 
-bindsym $mod+Shift+w exec setbg ~/backgrounds
-
-# Allow scripts to interface with dbus
-exec_always --no-startup-id ~/scripts/misc/Xdbus.sh
+bindsym $mod+Shift+w exec setbg ~/Picutres/backgrounds
 
 # Start notification daemon
 exec_always --no-startup-id pkill dunst; dunst
@@ -166,13 +185,10 @@ exec_always --no-startup-id pkill dunst; dunst
 exec_always --no-startup-id pkill picom; picom --no-use-damage
 
 # Use URxvt settings from Xresources
-exec_always --no-startup-id xrdb ~/.Xresources
+exec_always xrdb ~/.Xresources
 exec --no-startup-id pulseaudio -k; pulseaudio --start
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-exec --no-startup-id brave
-exec --no-startup-id code
-exec --no-startup-id discord-canary
-exec --no-startup-id sleep 1 && ~/.local/bin/uterm
-exec --no-startup-id /home/user/build/Write/Write
-exec --no-startup-id sleep 5 && urxvt -e ranger
+exec --no-startup-id firefox
+exec --no-startup-id discord
+exec --no-startup-id sleep 1 && i3-msg 'workspace 1; exec ~/.local/bin/uterm'
