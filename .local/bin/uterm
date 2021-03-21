@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if ! urxvtc "$@"; then
   urxvtd -q -o -f
   urxvtc "$@"

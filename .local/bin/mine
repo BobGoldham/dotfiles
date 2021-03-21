@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/local/bin/nsfminer -P stratum://0xCeeF2f82500DC5279f1a9139D54ca4bF3c3b1163.worker@eu1.ethermine.org:4444
