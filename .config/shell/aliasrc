@@ -30,7 +30,6 @@ alias \
 	f="$FILE" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	p="sudo pacman" \
 	xi="sudo xbps-install" \
 	xr="sudo xbps-remove -R" \
 	xq="xbps-query" \
@@ -49,6 +48,7 @@ alias \
 	vim="nvim" \
 	v="nvim" \
 	s="sudo" \
+	p="ping 8.8.8.8" \
 	ls="lsd" \
 	abs="realpath" \
 	pacman="sudo pacman" \
