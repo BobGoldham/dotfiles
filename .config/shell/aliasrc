@@ -58,3 +58,5 @@ alias \
 	cp="cp -i" \
 	mv="mv -i" \
 	nano="nvim" \
+	python="python3 -m asyncio" \
+	py="python3 -m asyncio" \

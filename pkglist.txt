@@ -1,14 +1,18 @@
+alacritty
 ananicy
 arandr
 archiso
 autoconf
 automake
 base
+bind
 bison
+bitcoin-core
 blackarch-keyring
 candy-icons-git
 code
 composer
+conky
 cronie
 cudnn
 discord
@@ -30,6 +34,7 @@ inetutils
 intel-ucode
 joyutils
 lib32-ncurses5-compat-libs
+libreoffice-fresh-de
 lsd
 lutris
 maim
@@ -58,6 +63,7 @@ polybar
 progress
 pulseaudio-ctl
 pulsemixer
+python-aioconsole
 python-magic
 python-pyusb
 qtile
@@ -78,6 +84,7 @@ ttf-linux-libertine
 ttf-nerd-fonts-hack-complete-git
 unclutter
 unrar
+virtualbox
 wget
 whatsapp-for-linux
 wine-gecko
@@ -87,6 +94,7 @@ xcape
 xdg-user-dirs
 xdotool
 xorg-xdpyinfo
+xorg-xev
 xorg-xinit
 xorg-xkill
 xwallpaper
